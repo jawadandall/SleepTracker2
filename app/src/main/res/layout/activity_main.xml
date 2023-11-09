@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sleepTrackerRv"
+        android:layout_width="403dp"
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitBtn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/hoursEditText"
+        android:layout_width="221dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:hint="Hours Slept?"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/qualitySlider"
+        android:layout_width="324dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="5"
+        app:layout_constraintTop_toBottomOf="@+id/hoursEditText"
+        tools:layout_editor_absoluteX="56dp" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="320dp"
+        android:layout_height="221dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleep Quality on a scale from 1(worst) to 5(best)"
+        app:layout_constraintEnd_toEndOf="@+id/qualitySlider"
+        app:layout_constraintStart_toStartOf="@+id/qualitySlider"
+        app:layout_constraintTop_toBottomOf="@+id/qualitySlider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
