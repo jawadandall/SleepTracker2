@@ -1,3 +1,12 @@
+/*package com.example.sleeptracker
+
+
+
+class SleepEntry(
+    val date: String,
+    val hours: String,
+    val quality: String
+)*/
 package com.example.sleeptracker
 
 import androidx.room.Entity
@@ -10,4 +19,6 @@ data class SleepEntity(
     val date: String,
     val hours: String,
     val quality: String
-)
+){
+
+}

@@ -1,11 +1,8 @@
 package com.example.sleeptracker
 
-
-
- class SleepEntry(
+data class DisplaySleep (
     val date: String,
     val hours: String,
-    val quality: String
-){
-
+    val quality: String)
+{
 }

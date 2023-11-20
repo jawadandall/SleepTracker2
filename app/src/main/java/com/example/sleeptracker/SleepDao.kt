@@ -10,11 +10,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SleepDao {
     @Insert
-    fun insertSleep(sleep: List<SleepEntity>)
+    fun insertSleep(sleep: SleepEntity)
     @Query("SELECT * FROM sleep_entries")
     fun getAllSleepEntries(): Flow<List<SleepEntity>>
 
 
-    @Delete
-    fun deleteSleep(sleep: SleepEntity)
+    @Query("DELETE FROM sleep_entries")
+    fun deleteSleep()
 }

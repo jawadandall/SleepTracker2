@@ -43,6 +43,11 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
+    //Kotlin coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
+
     // Room dependencies for SQLite database
     implementation("androidx.room:room-runtime:2.4.0")
     kapt("androidx.room:room-compiler:2.4.0") // Kotlin annotation processor for Room
