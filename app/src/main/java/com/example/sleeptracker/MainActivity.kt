@@ -9,12 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sleeptracker.AppDatabase
-import com.example.sleeptracker.R
-import com.example.sleeptracker.SleepApplication
-import com.example.sleeptracker.SleepDao
-import com.example.sleeptracker.SleepEntity
-import com.example.sleeptracker.SleepRecyclerViewAdapter
 import com.google.android.material.slider.Slider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -45,6 +39,20 @@ class MainActivity : AppCompatActivity() {
 
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         userInputCalendarDate = sdf.format(userInputCalendar.date)
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            // Retrieve entries using a Flow
+            val allEntries = (application as SleepApplication).db.sleepDao().getAllSleepEntries()
+
+            // Update UI on the main thread
+            withContext(Dispatchers.Main) {
+                allEntries.collect { entriesFromDatabase ->
+                    entries.clear()
+                    entries.addAll(entriesFromDatabase)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        }
 
         userInputCalendar.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val selectedCalendar = Calendar.getInstance()
