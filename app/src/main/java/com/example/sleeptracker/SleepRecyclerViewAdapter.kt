@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SleepRecyclerViewAdapter(private val items: List<SleepEntity>) : RecyclerView.Adapter<SleepRecyclerViewAdapter.MyViewHolder>(){
+class SleepRecyclerViewAdapter(private val items: List<SleepEntity>): RecyclerView.Adapter<SleepRecyclerViewAdapter.MyViewHolder>(){
     // Implement methods for the RecyclerView.Adapter
     // onCreateViewHolder, onBindViewHolder, getItemCount, and ViewHolder class
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -52,7 +52,7 @@ class SleepRecyclerViewAdapter(private val items: List<SleepEntity>) : RecyclerV
         holder.qualityTextView.text = formattedQuality
         holder.dateView.text = formattedDate
         holder.hoursView.text = formattedTime
-        //holder.dateView.append(item.date)//text= item.date.toString()
-        //holder.hoursView.append(item.hours)//text= item.hours
+
+
     }
 }

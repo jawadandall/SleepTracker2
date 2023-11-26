@@ -3,4 +3,6 @@
     <string name="time">You slept for %1$s hours </string>
     <string name="date">On %1$s </string>
     <string name="sleep_quality">Sleep Quality: %1$s </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

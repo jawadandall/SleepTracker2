@@ -6,66 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sleepTrackerRv"
-        android:layout_width="406dp"
-        android:layout_height="234dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitBtn"
-        app:layout_constraintVertical_bias="1.0" />
+        app:menu="@menu/bottom_navigation"/>
 
-    <EditText
-        android:id="@+id/hoursEditText"
-        android:layout_width="161dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
-        android:hint="Hours Slept?"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/qualitySlider"
-        android:layout_width="324dp"
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:stepSize="1"
-        android:valueFrom="1"
-        android:valueTo="5"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hoursEditText" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Sleep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="326dp"
-        android:layout_height="304dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sleep Quality on a scale from 1(worst) to 5(best)"
-        app:layout_constraintEnd_toEndOf="@+id/qualitySlider"
-        app:layout_constraintStart_toStartOf="@+id/qualitySlider"
-        app:layout_constraintTop_toBottomOf="@+id/qualitySlider" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

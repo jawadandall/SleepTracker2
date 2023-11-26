@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Log Sleep"
+        android:icon="@drawable/baseline_snooze_24"
+        android:id="@+id/nav_entry"
+        />
+
+    <item
+        android:title="View Log"
+        android:icon="@drawable/baseline_format_list_bulleted_24"
+        android:id="@+id/nav_list"
+        />
+</menu>
